@@ -72,6 +72,17 @@ $(".btn").click(function(event){
     
 });
 
+$("h1").click(function(event) {
+    if(!gameStarted){
+        
+        $("h1").text("Level 0");
+        nextSequence();
+        gameStarted=true;
+    }
+
+});
+
+
 $(document).keydown(function(event) {
     if(!gameStarted){
         
@@ -95,7 +106,7 @@ function gameOver(){
         text="Nice you smart";
     }
 
-    $("h1").text(" Game Over! "+ text + ", Press any key to start ");
+    $("h1").text(" Game Over! "+ text + ", Press any key or Click here to start! ");
     $("body").addClass("game-over");
     setTimeout(function() {
         $("body").removeClass("game-over");
