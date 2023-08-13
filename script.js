@@ -74,7 +74,7 @@ $(".btn").click(function(event){
 
 $(document).keydown(function(event) {
     if(!gameStarted){
-        $("body").removeClass("game-over");
+        
         $("h1").text("Level 0");
         nextSequence();
         gameStarted=true;
@@ -97,6 +97,9 @@ function gameOver(){
 
     $("h1").text(" Game Over! "+ text + ", Press any key to start ");
     $("body").addClass("game-over");
+    setTimeout(function() {
+        $("body").removeClass("game-over");
+    }, 300);
     userClickedPattern=[];
     gamePattern=[];
     gameStarted=false;
