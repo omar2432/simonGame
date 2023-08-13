@@ -107,6 +107,7 @@ function gameOver(){
     }
 
     $("h1").text(" Game Over! "+ text + ", Press any key or Click here to start! ");
+    playSound("wrong");
     $("body").addClass("game-over");
     setTimeout(function() {
         $("body").removeClass("game-over");
